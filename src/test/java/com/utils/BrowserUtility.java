@@ -28,8 +28,8 @@ public abstract class BrowserUtility {
 
 	public BrowserUtility(WebDriver driver) {
 		this.driver = driver;
-		this.driverForSS = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driverForSS = driver;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
 	public BrowserUtility(Browsers browser) {
@@ -40,8 +40,8 @@ public abstract class BrowserUtility {
 		} else if (browser == Browsers.FIREFOX) {
 			driver = new FirefoxDriver();
 		}
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		this.driverForSS = driver;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		driverForSS = driver;
 	}
 	
 	public WebDriver getDriver() {
@@ -107,7 +107,7 @@ public abstract class BrowserUtility {
 	}
 	public void clickOn(By locator) {
 		//WebElement elemen = driver.findElement(locator);
-		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
 		element.click();
 	}
 	public void clearText(By locator) {
@@ -119,7 +119,8 @@ public abstract class BrowserUtility {
 		element.sendKeys(keyboardButton);
 	}
 	public ArrayList<GlobalDetailsPojo> getTableData(By tableLocator, By rowLocator) {
-		List<WebElement> rowList = getDriver().findElements(tableLocator);
+		//List<WebElement> rowList = getDriver().findElements(tableLocator);
+		List<WebElement> rowList = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(tableLocator));
 		List<WebElement> cellList;
 		ArrayList<GlobalDetailsPojo> dataList = new ArrayList<>();
 		GlobalDetailsPojo details;

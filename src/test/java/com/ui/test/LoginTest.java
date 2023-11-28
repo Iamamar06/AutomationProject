@@ -15,7 +15,7 @@ public class LoginTest {
 
 	@BeforeMethod(description = "Setup for the test")
 	public void setup() {
-		loginPage = new LoginPage(Browsers.EDGE);
+		loginPage = new LoginPage(Browsers.CHROME);
 		loginPage.maximizeBrowserWindow();
 	}
 

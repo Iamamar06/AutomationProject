@@ -20,7 +20,7 @@ public class FirstScript {
 		DashboardPage dp = loginPage.doLoginWith("iamfd", "password");
 		//boolean status = dp.openJobsCretedTodayTable().searchByJob("JOB_26543");
 		//System.out.println(status);
-		String createdJobNO = dp.gotoCreateJobPage().createJobOnUI(TestUtility.enterCreateJobinputfiels());
+		String createdJobNO = dp.gotoCreateJobPage().createJobOnUI(TestUtility.enterCreateJobinputfields());
 		boolean status = dp.gotoDashboardPage().openJobsCretedTodayTable().searchByJob(createdJobNO);
 		//GlobalList gl = dp.searchJobByJobIdOrIMEINumber("JOB_25255");
 		System.out.println(status);

@@ -29,8 +29,8 @@ public final class LoginPage extends BrowserUtility {
 
 	
 	public DashboardPage doLoginWith(String username, String password) {
-		enterTextInto(USERNAMEINPUTLOCATOR, "iamfd");
-		enterTextInto(PASSWORDINPUTLOCATOR, "password");
+		enterTextInto(USERNAMEINPUTLOCATOR, username);
+		enterTextInto(PASSWORDINPUTLOCATOR, password);
 		clickOn(SIGNINBUTTONLOCATOR);
 		return new DashboardPage(getDriver());
 	}

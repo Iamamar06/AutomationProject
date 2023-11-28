@@ -71,7 +71,7 @@ public class TestUtility {
 		return createJob;
 	}
 
-	public static CreateJobInputDetailsPojo enterCreateJobinputfiels() {
+	public static CreateJobInputDetailsPojo enterCreateJobinputfields() {
 		Faker faker = new Faker(new Locale("en-IND"));
 		CreateJobInputDetailsPojo createjobdetails = new CreateJobInputDetailsPojo("Google","Nexus 2","Nexus 2 blue",faker.numerify("##############"),
 				"12/23/2022", "In Warrenty","Poor battery life" ,"Test remarks", faker.name().firstName(), faker.name().lastName(),
